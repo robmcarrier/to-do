@@ -1,1 +1,1 @@
-This is the readme for Sinatra To-Do-Hourly
+This is the readme for Sinatra To-Do
