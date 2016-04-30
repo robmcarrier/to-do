@@ -1,0 +1,6 @@
+<h1>Welcome to To-do list app index</h1>
+<a href="/lists/new"><h3>Create list</h3></a>
+<br>
+<% @lists.each do |list| %>
+    <a href="/lists/<%=list.id%>"><li><%= list.title %></li></a>
+<% end %>
