@@ -1,5 +1,5 @@
 <h2><%= @list.title %></h2>
-<p><%= @list.type %></p>
+<p><%= @list.list_type %></p>
 
 
 <% @list.items.each do |item| %>
@@ -29,3 +29,6 @@
 </form>
 
 <a href="/">Back to List of Lists</a>
+<form action="/delete_list/<%=@list.id%>" method="post">
+    <input type="submit" value="Delete List">
+</form>

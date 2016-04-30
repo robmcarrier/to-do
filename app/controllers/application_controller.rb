@@ -22,8 +22,8 @@ class ApplicationController < Sinatra::Base
 
     post '/lists' do
         @list = List.new
-        @list.title = params[:title]
-        @list.title = params[:type]
+        @list.title = params["title"]
+        @list.list_type = params["type"]
         @list.save
 
         redirect to '/'
@@ -42,6 +42,13 @@ class ApplicationController < Sinatra::Base
         item.destroy
 
         redirect to "/lists/#{params["test"]}"
+    end
+
+    post '/delete_list/:id' do
+        list = List.find_by_id(params[:id])
+        list.destroy
+
+        redirect to '/'
     end
 
 end
